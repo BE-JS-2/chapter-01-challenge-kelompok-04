@@ -2,13 +2,12 @@
  * SOAL NO. 1
  */
 
-
 /**
  * SMA Maju Mundur mengadakan ujian matematika, dan didapatkan nilai-nilai ujian
  * siswanya dengan data sebagai berikut
- * 
+ *
  * Nama; kelas; nilai
- * 
+ *
  * Andi; 12-IPA-A; 90
  * Dila; 12-IPA-A; 35
  * Udin; 12-IPA-A; 67
@@ -18,53 +17,117 @@
  * Farah; 12-IPA-C; 76
  * Dini; 12-IPA-C; 81
  * Dina; 12-IPA-C; 87
- * 
- * 
+ *
+ *
  */
 
-
 /**
- * 
+ *
  * Ubahlah data nilai di atas menjadi sebuah array of object, di mana terdapat pengelompokkan per kelasnya.
  * Hasil disimpan di nilai_student
- * 
+ *
  */
 
+let nilai_student = [
+  {
+    nama: "Andi",
+    kelas: "12-IPA-A",
+    nilai: 90,
+  },
+  {
+    nama: "Dila",
+    kelas: "12-IPA-A",
+    nilai: 35,
+  },
+  {
+    nama: "Udin",
+    kelas: "12-IPA-A",
+    nilai: 67,
+  },
+  {
+    nama: "Nina",
+    kelas: "12-IPA-B",
+    nilai: 80,
+  },
+  {
+    nama: "Nani",
+    kelas: "12-IPA-B",
+    nilai: 73,
+  },
+  {
+    nama: "Jali",
+    kelas: "12-IPA-B",
+    nilai: 98,
+  },
+  {
+    nama: "Farah",
+    kelas: "12-IPA-C",
+    nilai: 76,
+  },
+  {
+    nama: "Dini",
+    kelas: "12-IPA-C",
+    nilai: 81,
+  },
+  {
+    nama: "Dina",
+    kelas: "12-IPA-C",
+    nilai: 87,
+  },
+];
 
-let nilai_student;
-
-console.log(nilai_student)
-
+console.log(nilai_student);
 
 /**
- * 
+ *
  * Nilai minimal untuk bisa lulus pelajaran matermatika adalah 70, tentukan siswa mana saja
  * pada masing-masing kelas yang tidak lulus pelajaran matematika
- * 
+ *
  */
 
-let student_tidak_lulus_kelas_A;
-let student_tidak_lulus_kelas_B;
-let student_tidak_lulus_kelas_C;
+function filterTidakLulus(kelas) {
+  return nilai_student.filter((student) => {
+    return student.kelas === kelas && student.nilai < 70;
+  });
+}
 
+let student_tidak_lulus_kelas_A = filterTidakLulus("12-IPA-A");
+let student_tidak_lulus_kelas_B = filterTidakLulus("12-IPA-B");
+let student_tidak_lulus_kelas_C = filterTidakLulus("12-IPA-C");
+
+console.log(student_tidak_lulus_kelas_A);
+console.log(student_tidak_lulus_kelas_B);
+console.log(student_tidak_lulus_kelas_C);
 
 /**
- * 
+ *
  * Hitung nilai rata-rata per kelas
- * 
- * 
+ *
+ *
  */
 
-let rata_rata_kelas_A;
-let rata_rata_kelas_B;
-let rata_rata_kelas_C;
- 
+function rataRataKelas(arrayOfObject, kelas) {
+  let arrayOfObjectFilter = arrayOfObject.filter(
+    (student) => student.kelas == kelas
+  );
 
+  return (
+    arrayOfObjectFilter.reduce((total, next) => total + next.nilai, 0) /
+    arrayOfObjectFilter.length
+  );
+}
+
+let rata_rata_kelas_A = rataRataKelas(nilai_student, "12-IPA-A");
+let rata_rata_kelas_B = rataRataKelas(nilai_student, "12-IPA-B");
+let rata_rata_kelas_C = rataRataKelas(nilai_student, "12-IPA-C");
+
+console.log(rata_rata_kelas_A);
+console.log(rata_rata_kelas_B);
+console.log(rata_rata_kelas_C);
 
 /**
  * SOAL NO.2
  */
-
 
  const users = [
   {
@@ -363,7 +426,6 @@ let rata_rata_kelas_C;
   }
 ]
 
-
 // Nama company dari Glenna Reichert
 console.log(users[]) // lengkapi
 
@@ -379,43 +441,33 @@ console.log(users[])
 // Geolocation (latitude, longitude) dari alamat Clementina DuBuque adalah
 console.log(users[], users[])
 
-
-
 /**
  * SOAL NO. 3
  */
 
-
 /**
- * Lengkapi function untuk mengkonversi detik menjadi menit 
+ * Lengkapi function untuk mengkonversi detik menjadi menit
  */
-
 
  function convertTime(seconds) {
 
 }
 
-
 console.log(convertTime(60)) // expected output: 01:00
 console.log(convertTime(75)) // expected output: 01:15
 console.log(convertTime(153)) // expected output: 02:33
-
-
 
 /**
  * SOAL NO.4
  */
 
-
 /**
  * Lengkapilah function berikut untuk menampilkan 'Aku suka buah ...'
  */
 
-
 function iLoveFruit(fruits) {
 
 }
-
 
 /**
  * sample input: ["Apple", "Orange", "Banana"]
@@ -425,12 +477,9 @@ function iLoveFruit(fruits) {
  * I love Banana
  */
 
-
-
 /**
  * SOAL NO. 5
  */
-
 
 /**
  * Lengkapi function untuk menghilangkan nama buah-buahan yang dimulai dengan huruf A
@@ -448,12 +497,9 @@ console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")) // expected outpu
  * sample output: ["Orange", "Banana"]
  */
 
-
-
 /**
  * SOAL NO. 6
  */
-
 
 /**
  * Lengkapi function berikut untuk menjumlahkan semua elemen dalam array
@@ -468,11 +514,9 @@ console.log(sumOfArray([12, 8, 4, 9])) // expected output: 33
 console.log(sumOfArray([8])) // expected output: 8
 console.log(sumOfArray([])) // expected output: 0
 
-
 /**
  * SOAL NO. 7
  */
-
 
 /**
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
@@ -485,11 +529,9 @@ console.log(plusOne([3, 6, 7])) // expected output: [4, 7, 8]
 console.log(plusOne([0, 8, 9])) // expected output: [1, 9, 10]
 console.log(sumOfArray([])) // expected output: []
 
-
 /**
  * SOAL NO. 8
  */
-
 
 /**
  * Lengkapi function berikut untuk menggabungkan array-array
@@ -502,7 +544,6 @@ console.log(joinArray([1, 2], [3, 4], [8])) // expected output: [1, 2, 3, 4, 8]
 console.log(joinArray([9], [8])) // expected output: [9, 8]
 console.log(joinArray([], [8, 2], [6, 4])) // expected output: [8, 2, 6, 4]
 
-
 /**
  * SOAL NO. 9
  */
@@ -510,7 +551,6 @@ console.log(joinArray([], [8, 2], [6, 4])) // expected output: [8, 2, 6, 4]
 /**
  * Lengkapilah function berikut untuk menghitung harga setelah didiskon
  */
-
 
 function countDiscount(harga_awal, persen_diskon) {
 
@@ -531,7 +571,6 @@ console.log(countDiscount(50000, 20)) // expected output: 40000
 function removeAllNumber(arr) {
 
 }
-
 
 console.log(removeAllNumber(["Lala", undefined, 12, 9, true])) // expected output: ["Lala", undefined, true]
 console.log(removeAllNumber([[1, 2], "Apel", false, 9])) // expected output: [[1, 2], "Apel", false]
