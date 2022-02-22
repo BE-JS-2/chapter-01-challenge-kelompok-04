@@ -480,11 +480,19 @@ function iLoveFruit(fruits) {}
 /**
  * Lengkapi function untuk menghilangkan nama buah-buahan yang dimulai dengan huruf A
  */
-function removeFruitStartWithALetter(fruits) {}
+function removeFruitStartWithALetter(fruits) {
+  let array = fruits;
+  for (let index = 0; index < fruits.length; index++) {
+    if (fruits[index].charAt(0) == "A") {
+      array.splice(index, 1);
+    }
+  }
+  return array;
+}
 
 console.log(removeFruitStartWithALetter(["Apple", "Banana"])); // expected output: ["Banana"]
 console.log(removeFruitStartWithALetter(["Anggur"])); // expected output: []
-console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")); // expected output: ["Mengkudu", "Pisang"]
+console.log(removeFruitStartWithALetter(["Mengkudu", "Pisang"])); // expected output: ["Mengkudu", "Pisang"]
 
 /**
  * sample input: ["Apple", "Orange", "Banana"]
@@ -499,7 +507,13 @@ console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")); // expected outp
  * Lengkapi function berikut untuk menjumlahkan semua elemen dalam array
  */
 
-function sumOfArray(arr) {}
+function sumOfArray(arr) {
+  let hasil = 0;
+  for (let i = 0; i < arr.length; i++) {
+    hasil += arr[i];
+  }
+  return hasil;
+}
 
 console.log(sumOfArray([3, 0, 9])); // expected output: 12
 console.log(sumOfArray([12, 8, 4, 9])); // expected output: 33
@@ -514,7 +528,7 @@ console.log(sumOfArray([])); // expected output: 0
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
  */
 
- function plusOne(arr) {
+function plusOne(arr) {
   let array = [];
   for (let i = 0; i < arr.length; i++) {
     array.push(arr[i] + 1);
@@ -550,7 +564,6 @@ console.log(joinArray([1, 2], [3, 4], [8])); // expected output: [1, 2, 3, 4, 8]
 console.log(joinArray([9], [8])); // expected output: [9, 8]
 console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
 
-
 /**
  * SOAL NO. 9
  */
@@ -559,17 +572,16 @@ console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
  * Lengkapilah function berikut untuk menghitung harga setelah didiskon
  */
 
-
- function countDiscount(harga_awal, persen_diskon) {
+function countDiscount(harga_awal, persen_diskon) {
   let hargaSetelahDiskon, hargaDiskon;
   hargaDiskon = (persen_diskon / 100) * harga_awal;
   hargaSetelahDiskon = harga_awal - hargaDiskon;
   return hargaSetelahDiskon;
 }
 
-console.log(countDiscount(10000, 10)) // expected output: 9000
-console.log(countDiscount(5000, 25)) // expected output: 3750
-console.log(countDiscount(50000, 20)) // expected output: 40000
+console.log(countDiscount(10000, 10)); // expected output: 9000
+console.log(countDiscount(5000, 25)); // expected output: 3750
+console.log(countDiscount(50000, 20)); // expected output: 40000
 
 /**
  * SOAL NO. 10
@@ -579,7 +591,15 @@ console.log(countDiscount(50000, 20)) // expected output: 40000
  * Lengkapi function berikut untuk menghilangkan elemen array yang memiliki tipe data number
  */
 
-function removeAllNumber(arr) {}
+function removeAllNumber(arr) {
+  let hasil = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      hasil.push(arr[i]);
+    }
+  }
+  return hasil;
+}
 
 console.log(removeAllNumber(["Lala", undefined, 12, 9, true])); // expected output: ["Lala", undefined, true]
 console.log(removeAllNumber([[1, 2], "Apel", false, 9])); // expected output: [[1, 2], "Apel", false]
