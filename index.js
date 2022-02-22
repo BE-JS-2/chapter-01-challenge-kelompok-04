@@ -521,8 +521,12 @@ console.log(sumOfArray([])) // expected output: 0
 /**
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
  */
-function plusOne(arr) {
-
+ function plusOne(arr) {
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    array.push(arr[i] + 1);
+  }
+  return array;
 }
 
 console.log(plusOne([3, 6, 7])) // expected output: [4, 7, 8]
@@ -537,12 +541,22 @@ console.log(sumOfArray([])) // expected output: []
  * Lengkapi function berikut untuk menggabungkan array-array
  */
 function joinArray(arr1, arr2, arr3) {
-
+  let joinedArray = [];
+  let hasil;
+  if ((arr1, arr2, arr3)) {
+    hasil = joinedArray.concat(arr1, arr2, arr3);
+  } else if (!arr3) {
+    hasil = joinedArray.concat(arr1, arr2);
+  } else if (arr1.length === 0) {
+    hasil = joinedArray.concat(arr2, arr3);
+  }
+  return hasil;
 }
 
-console.log(joinArray([1, 2], [3, 4], [8])) // expected output: [1, 2, 3, 4, 8]
-console.log(joinArray([9], [8])) // expected output: [9, 8]
-console.log(joinArray([], [8, 2], [6, 4])) // expected output: [8, 2, 6, 4]
+console.log(joinArray([1, 2], [3, 4], [8])); // expected output: [1, 2, 3, 4, 8]
+console.log(joinArray([9], [8])); // expected output: [9, 8]
+console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
+
 
 /**
  * SOAL NO. 9
