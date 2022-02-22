@@ -566,8 +566,11 @@ console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
  * Lengkapilah function berikut untuk menghitung harga setelah didiskon
  */
 
-function countDiscount(harga_awal, persen_diskon) {
-
+ function countDiscount(harga_awal, persen_diskon) {
+  let hargaSetelahDiskon, hargaDiskon;
+  hargaDiskon = (persen_diskon / 100) * harga_awal;
+  hargaSetelahDiskon = harga_awal - hargaDiskon;
+  return hargaSetelahDiskon;
 }
 
 console.log(countDiscount(10000, 10)) // expected output: 9000
