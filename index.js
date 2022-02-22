@@ -427,6 +427,7 @@ const users = [
 ];
 
 // Nama company dari Glenna Reichert
+console.log(users);
 console.log(users[8].company.name); // lengkapi
 
 // Aktivitas tidak produktif Ervin Howell yang dilakukan tiap Jumat
@@ -578,12 +579,13 @@ console.log(countDiscount(50000, 20)); // expected output: 40000
  */
 
 function removeAllNumber(arr) {
-  for (let index = 0; index < arr.length; index++) {
-    if (typeof arr[index] == "number") {
-      arr.splice(index, 1);
+  let hasil = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      hasil.push(arr[i]);
     }
   }
-  return arr;
+  return hasil;
 }
 
 console.log(removeAllNumber(["Lala", undefined, 12, 9, true])); // expected output: ["Lala", undefined, true]
