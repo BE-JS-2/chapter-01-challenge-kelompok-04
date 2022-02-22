@@ -450,11 +450,24 @@ console.log(users[9].address.geo.lat, users[9].address.geo.lng);
  * Lengkapi function untuk mengkonversi detik menjadi menit
  */
 
-function convertTime(seconds) {}
 
-console.log(convertTime(60)); // expected output: 01:00
-console.log(convertTime(75)); // expected output: 01:15
-console.log(convertTime(153)); // expected output: 02:33
+ function convertTime(seconds) {
+   var menit = Math.floor(seconds/60);
+   var detik = seconds%60;
+   if (menit < 10) {
+    menit = "0" + menit;
+  }
+  if (detik < 10) {
+    detik = "0" + detik;
+  }
+
+   console.log(menit + ":" + detik)
+}
+
+console.log(convertTime(60)) // expected output: 01:00
+console.log(convertTime(75)) // expected output: 01:15
+console.log(convertTime(153)) // expected output: 02:33
+
 
 /**
  * SOAL NO.4
@@ -464,8 +477,17 @@ console.log(convertTime(153)); // expected output: 02:33
  * Lengkapilah function berikut untuk menampilkan 'Aku suka buah ...'
  */
 
-function iLoveFruit(fruits) {}
 
+
+function iLoveFruit(fruits) {
+  let result = "";
+    for (let index = 0; index < fruits.length; index++) {
+      result += "I love " + fruits[index] + `\n`;
+    }
+    return result;
+  
+
+}
 /**
  * sample input: ["Apple", "Orange", "Banana"]
  * sample output:
@@ -473,6 +495,7 @@ function iLoveFruit(fruits) {}
  * I love Orange
  * I love Banana
  */
+ console.log(iLoveFruit(["Apple", "Orange", "Banana"]));
 
 /**
  * SOAL NO. 5
