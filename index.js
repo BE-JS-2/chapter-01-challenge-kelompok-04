@@ -514,7 +514,7 @@ console.log(sumOfArray([])); // expected output: 0
  * Lengkapi function berikut untuk menambah 1 setiap elemen yang ada di dalam array
  */
 
- function plusOne(arr) {
+function plusOne(arr) {
   let array = [];
   for (let i = 0; i < arr.length; i++) {
     array.push(arr[i] + 1);
@@ -550,7 +550,6 @@ console.log(joinArray([1, 2], [3, 4], [8])); // expected output: [1, 2, 3, 4, 8]
 console.log(joinArray([9], [8])); // expected output: [9, 8]
 console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
 
-
 /**
  * SOAL NO. 9
  */
@@ -559,17 +558,16 @@ console.log(joinArray([], [8, 2], [6, 4])); // expected output: [8, 2, 6, 4]
  * Lengkapilah function berikut untuk menghitung harga setelah didiskon
  */
 
-
- function countDiscount(harga_awal, persen_diskon) {
+function countDiscount(harga_awal, persen_diskon) {
   let hargaSetelahDiskon, hargaDiskon;
   hargaDiskon = (persen_diskon / 100) * harga_awal;
   hargaSetelahDiskon = harga_awal - hargaDiskon;
   return hargaSetelahDiskon;
 }
 
-console.log(countDiscount(10000, 10)) // expected output: 9000
-console.log(countDiscount(5000, 25)) // expected output: 3750
-console.log(countDiscount(50000, 20)) // expected output: 40000
+console.log(countDiscount(10000, 10)); // expected output: 9000
+console.log(countDiscount(5000, 25)); // expected output: 3750
+console.log(countDiscount(50000, 20)); // expected output: 40000
 
 /**
  * SOAL NO. 10
@@ -579,7 +577,14 @@ console.log(countDiscount(50000, 20)) // expected output: 40000
  * Lengkapi function berikut untuk menghilangkan elemen array yang memiliki tipe data number
  */
 
-function removeAllNumber(arr) {}
+function removeAllNumber(arr) {
+  for (let index = 0; index < arr.length; index++) {
+    if (typeof arr[index] == "number") {
+      arr.splice(index, 1);
+    }
+  }
+  return arr;
+}
 
 console.log(removeAllNumber(["Lala", undefined, 12, 9, true])); // expected output: ["Lala", undefined, true]
 console.log(removeAllNumber([[1, 2], "Apel", false, 9])); // expected output: [[1, 2], "Apel", false]
