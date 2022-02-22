@@ -481,11 +481,19 @@ function iLoveFruit(fruits) {}
 /**
  * Lengkapi function untuk menghilangkan nama buah-buahan yang dimulai dengan huruf A
  */
-function removeFruitStartWithALetter(fruits) {}
+function removeFruitStartWithALetter(fruits) {
+  let array = fruits;
+  for (let index = 0; index < fruits.length; index++) {
+    if (fruits[index].charAt(0) == "A") {
+      array.splice(index, 1);
+    }
+  }
+  return array;
+}
 
 console.log(removeFruitStartWithALetter(["Apple", "Banana"])); // expected output: ["Banana"]
 console.log(removeFruitStartWithALetter(["Anggur"])); // expected output: []
-console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")); // expected output: ["Mengkudu", "Pisang"]
+console.log(removeFruitStartWithALetter(["Mengkudu", "Pisang"])); // expected output: ["Mengkudu", "Pisang"]
 
 /**
  * sample input: ["Apple", "Orange", "Banana"]
@@ -500,7 +508,13 @@ console.log(removeFruitStartWithALetter("Mengkudu", "Pisang")); // expected outp
  * Lengkapi function berikut untuk menjumlahkan semua elemen dalam array
  */
 
-function sumOfArray(arr) {}
+function sumOfArray(arr) {
+  let hasil = 0;
+  for (let i = 0; i < arr.length; i++) {
+    hasil += arr[i];
+  }
+  return hasil;
+}
 
 console.log(sumOfArray([3, 0, 9])); // expected output: 12
 console.log(sumOfArray([12, 8, 4, 9])); // expected output: 33
