@@ -392,9 +392,10 @@ console.log(users[], users[])
 
 
  function convertTime(seconds) {
-
+   var menit = Math.floor(seconds/60);
+   var detik = seconds%60;
+   console.log(menit + ":" + detik)
 }
-
 
 console.log(convertTime(60)) // expected output: 01:00
 console.log(convertTime(75)) // expected output: 01:15
@@ -413,6 +414,7 @@ console.log(convertTime(153)) // expected output: 02:33
 
 
 function iLoveFruit(fruits) {
+  
 
 }
 
